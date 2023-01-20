@@ -15,9 +15,13 @@ public class CardService {
     CardRepository cardRepository3;
 
     public Card createAndReturn(Student student){
-        Card card = null;
+        //Card card = null;
+        Card c = new Card();
+        student.setCard(c);
+        c.setStudent(student); // yeh nhi kiya toh table pe pharak nhi padega lekin junit me failed test case aaya
+        cardRepository3.save(c);
         //link student with a new card
-        return card;
+        return c;
     }
 
     public void deactivateCard(int student_id){

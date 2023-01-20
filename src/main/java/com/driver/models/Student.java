@@ -1,6 +1,9 @@
 package com.driver.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -8,6 +11,9 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
 public class Student {
 
     @Id
@@ -22,6 +28,12 @@ public class Student {
     private String country;
 
     public Student() {
+    }
+    public Student(String emailId, String name, int age, String country){
+        this.emailId=emailId;
+        this.name=name;
+        this.age=age;
+        this.country=country;
     }
 
     // alter table student add foreign key constraint card references Card(id)

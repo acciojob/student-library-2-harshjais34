@@ -2,12 +2,18 @@ package com.driver.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Book {
+@Getter
+@Setter
+@AllArgsConstructor
+public class Book extends java.awt.print.Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,6 +43,11 @@ public class Book {
     private List<Transaction> transactions;
 
     public Book() {
+    }
+    public Book (String name, Genre genre, Author author){
+        this.name = name;
+        this.genre = genre;
+        this.author = author;
     }
 }
 
