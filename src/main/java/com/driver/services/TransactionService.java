@@ -104,7 +104,7 @@ public class TransactionService {
             t.setIssueOperation(true);
             //t.setTransactionStatus(TransactionStatus.SUCCESSFUL);
 
-            List<java.awt.print.Book> books = c.getBooks();
+            List<Book> books = c.getBooks();
             books.add(b);
             c.setBooks(books);
             cardRepository5.save(c);

@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Book extends java.awt.print.Book {
+public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,4 +50,3 @@ public class Book extends java.awt.print.Book {
         this.author = author;
     }
 }
-
